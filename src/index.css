@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Native controls (date picker, select arrow, scroll bars) follow the light or dark theme. */
+:root {
+  color-scheme: light dark;
+}
+
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Amounts line up in columns. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

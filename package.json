@@ -1,0 +1,39 @@
+{
+  "name": "expense-tracker-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Harcama takip paneli: React, Vite, Tailwind CSS ve LocalStorage ile aylık harcama ve bütçe takibi.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --strictPort --port 4173",
+    "test": "vitest run",
+    "test:gate": "vitest run src/lib",
+    "test:watch": "vitest",
+    "mutation": "stryker run",
+    "deploy": "vite build && gh-pages -d dist --nojekyll -m \"Deploy : site build\" -u \"AxelXoket <242811467+AxelXoket@users.noreply.github.com>\""
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "10.1.1",
+    "@stryker-mutator/vitest-runner": "10.1.1",
+    "@tailwindcss/vite": "4.3.5",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.11",
+    "@vitejs/plugin-react": "6.3.0",
+    "gh-pages": "6.3.0",
+    "jsdom": "29.1.1",
+    "tailwindcss": "4.3.5",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  },
+  "engines": {
+    "node": "^22.18.0 || ^24.11.0 || >=26.0.0"
+  }
+}

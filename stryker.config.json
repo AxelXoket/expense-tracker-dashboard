@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "vitest",
+  "plugins": ["@stryker-mutator/*", "./stryker.ignore-class-names.mjs"],
+  "ignorers": ["ClassNames"],
+  "mutate": ["src/**/*.{js,jsx}", "!src/**/*.test.{js,jsx}", "!src/main.jsx", "!src/test/**", "!src/ui.js"],
+  "coverageAnalysis": "perTest",
+  "reporters": ["clear-text", "progress", "html", "json"],
+  "thresholds": { "high": 90, "low": 85, "break": 85 },
+  "tempDirName": ".stryker-tmp"
+}
