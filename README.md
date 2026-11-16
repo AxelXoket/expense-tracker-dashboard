@@ -83,6 +83,16 @@ Stryker son koşuda 1004 geçerli bozmanın hepsini yakaladı (%100; eşik %85).
 
 Elle denetlenenler: karanlık tema ve telefon genişliği ekran görüntüleriyle denendi. Örnek veri bağlantısı (`?ornek`) ve Content Security Policy derlenmiş sürümde tarayıcıda denendi; konsolda hata yok.
 
+## Yapay zekâyı nerede ve nasıl kullandım
+
+Geliştirmede yapay zekâ asistanı olarak Claude'u (Claude Code) kullandım. Önerilen hiçbir kod testsiz kalmadı.
+
+- **Planlama:** ekranlar (özet kartları, form, bütçe, dağılım, liste) ve veri modeli. Tutarları kuruş olarak tam sayıyla, tarihleri yerel takvim günü olarak saklama kararı bu aşamada çıktı.
+- **Bileşenler:** form, bütçe kartı ve liste bileşenlerinin ilk sürümleri; Türkçe metinler ve erişilebilirlik ayrıntıları sonra düzeltildi.
+- **Hata ayıklama:** kırmızı testlerin kök nedeni. Örnekler: `Blob.text()` CSV'nin başındaki BOM işaretini siliyordu; jsdom 31 kullandığım Node sürümüyle uyumsuzdu, 29.1.1'e indim.
+- **Kod incelemesi:** ayrı bir yapay zekâ oturumu alan mantığını sert bir gözle inceledi. Bulduğu açıklar kapatıldı: yedek yazılamadığında eski kaydın ezilmesi, CSV'de formül enjeksiyonu (`src/lib/expenses.js`), iki sekmenin birbirinin kaydını ezmesi (`src/App.jsx`, `storage` olayı).
+- **Doğrulama:** davranış testleri ekranda görüneni sınıyor; Stryker mutasyon testi testlerin hatayı gerçekten yakaladığını ölçüyor.
+
 ## Proje yapısı
 
 ```
